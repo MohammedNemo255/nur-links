@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نور | Nur Islamic App</title>
+<meta name="description" content="تعلّم الحروف والأرقام والألوان والأشكال والحيوانات والصلاة والوضوء مع عمران ومريم. حمّل تطبيق نور مجانًا.">
+<meta property="og:title" content="نور | Nur Islamic App">
+<meta property="og:description" content="تعلّم الحروف والأرقام والألوان والأشكال والحيوانات والصلاة والوضوء مع عمران ومريم.">
+<meta property="og:image" content="icon.png">
+<link rel="icon" href="icon.png">
+<style>
+:root{
+  --bg:#0f2a1c; --bg2:#173b27; --card:#ffffff12; --line:#ffffff26;
+  --ink:#f5f1e3; --muted:#b9c8bd; --gold:#f2b84b; --gold-ink:#2a1d00; --paper:#f5f1e3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background-color:var(--bg); color:var(--ink);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'><g fill='none' stroke='%23f2b84b' stroke-opacity='0.07' stroke-width='1.2'><path d='M45 8l7 17 18-7-7 18 17 7-17 7 7 18-18-7-7 17-7-17-18 7 7-18-17-7 17-7-7-18 18 7z'/></g></svg>");
+  font-family:"Cairo","Segoe UI",Tahoma,system-ui,sans-serif; line-height:1.7;
+}
+a{color:inherit}
+.wrap{max-width:960px; margin:0 auto; padding:0 18px}
+
+/* hero */
+.hero{background:radial-gradient(120% 90% at 50% 0%, var(--bg2), var(--bg)); padding:34px 0 40px; text-align:center}
+.logo{width:96px; height:96px; border-radius:22px; box-shadow:0 8px 28px #0009; display:block; margin:0 auto 14px}
+h1{margin:0 0 2px; font-size:clamp(3.2rem,12vw,5rem); color:var(--gold); line-height:1.1; text-shadow:0 4px 24px #f2b84b33}
+.sub{margin:0 0 6px; font-size:clamp(1.15rem,4vw,1.5rem); font-weight:600}
+.find{margin:14px 0 0; color:var(--muted); font-size:.95rem}
+.find b{color:var(--gold)}
+.tag{margin:0 auto 22px; max-width:520px; color:var(--muted); font-size:1.05rem}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:14px 22px; border-radius:14px; font-weight:700; font-size:1.05rem; text-decoration:none;
+  border:1px solid var(--line); background:var(--card); color:var(--ink);
+}
+.btn:hover,.btn:focus-visible{border-color:var(--gold); outline:none}
+.btn.primary{background:var(--gold); color:var(--gold-ink); border-color:var(--gold); font-size:1.18rem; padding:16px 28px}
+.alt{font-size:.88rem; color:var(--muted); margin:10px 0 0}
+.alt a{color:var(--gold)}
+.hide{display:none}
+.chars{display:flex; justify-content:center; gap:14px; margin:26px auto 0}
+.chars figure{margin:0; width:130px}
+.chars img{width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:16px; border:2px solid var(--gold); display:block}
+.chars figcaption{font-size:.9rem; color:var(--muted); margin-top:4px}
+
+/* sections */
+section{padding:38px 0}
+section.alt-bg{background:#0b2016}
+h2{margin:0 0 6px; font-size:1.5rem; color:var(--gold)}
+.lead{margin:0 0 20px; color:var(--muted)}
+
+.banner{display:block; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:0 10px 36px #0007}
+.banner img{width:100%; height:auto; display:block}
+
+/* series grid */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; display:block}
+.card:hover,.card:focus-visible{border-color:var(--gold); outline:none}
+.card img{width:100%; aspect-ratio:3/4; object-fit:cover; display:block}
+.card span{display:block; padding:10px 8px; text-align:center; font-weight:700}
+.card small{display:block; font-weight:400; color:var(--muted); font-size:.82rem}
+
+/* app screens */
+.shots{display:flex; gap:12px; overflow-x:auto; padding-bottom:10px; scroll-snap-type:x mandatory}
+.shots img{height:360px; width:auto; border-radius:14px; border:1px solid var(--line); scroll-snap-align:start; flex:none}
+.chips{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:20px}
+.chips div{display:flex; align-items:center; gap:12px; background:#ffffff0d; border:1px solid var(--line); border-radius:16px; padding:16px 18px; font-size:1.12rem; font-weight:600}
+.chips i{width:11px; height:11px; border-radius:50%; background:var(--gold); flex:none}
+.follow{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:22px; padding-top:18px; border-top:1px solid var(--line)}
+.follow b{color:var(--gold)}
+.pill{display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:999px; border:1px solid var(--line); background:#ffffff0d; text-decoration:none; font-weight:600}
+.pill:hover{border-color:var(--gold)}
+
+/* channels */
+.links{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px}
+.links .btn{width:100%; justify-content:flex-start}
+.links .btn small{display:block; font-weight:400; font-size:.8rem; color:var(--muted)}
+footer{padding:26px 0 40px; text-align:center; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line)}
+@media (max-width:520px){ .shots img{height:300px} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="logo" src="icon.png" alt="أيقونة تطبيق نور">
+    <h1>نور</h1>
+    <p class="sub">تطبيق إسلامي لكل يوم</p>
+    <p class="tag">تعلّم الحروف والأرقام والألوان والأشكال والحيوانات والصلاة والوضوء مع عمران ومريم، بطريقة ممتعة وآمنة للأطفال.</p>
+    <a class="btn primary" id="play" href="https://play.google.com/store/apps/details?id=com.nemodroid.nurapp" rel="noopener">📲 حمّل التطبيق مجانًا من Google Play</a>
+    <p class="find">ابحث في جوجل بلاي عن <b>نور - تطبيق إسلامي</b></p>
+    <p class="alt hide" id="altBox">الزر مفتحش؟ <a href="market://details?id=com.nemodroid.nurapp">افتح مباشرة في متجر Play</a></p>
+    <div class="chars">
+      <figure><img src="img/emran.jpg" alt="عمران" loading="lazy"><figcaption>عمران</figcaption></figure>
+      <figure><img src="img/maryam.jpg" alt="مريم" loading="lazy"><figcaption>مريم</figcaption></figure>
+    </div>
+  </div>
+</header>
+
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <a class="banner" href="https://play.google.com/store/apps/details?id=com.nemodroid.nurapp" rel="noopener">
+      <img src="img/banner.jpg" alt="نور - تطبيق إسلامي لكل يوم: مواقيت الصلاة، القرآن وتلاوته، اتجاه القبلة، الأذكار والأدعية، أسماء الله الحسنى، ركن الأطفال" loading="lazy">
+    </a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>نتعلّم إيه مع نور؟</h2>
+    <p class="lead">سلاسل فيديو قصيرة مع عمران ومريم على يوتيوب وفيسبوك وإنستجرام.</p>
+    <div class="grid">
+      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_letters.jpg" alt="الحروف" loading="lazy"><span>الحروف العربية<small>الفتحة والضمة والكسرة</small></span></a>
+      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_numbers.jpg" alt="الأرقام" loading="lazy"><span>الأرقام<small>العدّ من ١ إلى ١٠</small></span></a>
+      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_colors.jpg" alt="الألوان" loading="lazy"><span>الألوان<small>١٠ ألوان بالعربي</small></span></a>
+      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_shapes.jpg" alt="الأشكال" loading="lazy"><span>الأشكال<small>دائرة، مربع، مثلث…</small></span></a>
+      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_animals.jpg" alt="الحيوانات" loading="lazy"><span>الحيوانات<small>٢٠ حيوان لطيف</small></span></a>
+      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_salah.jpg" alt="الصلاة" loading="lazy"><span>تعلّم الصلاة<small>خطوة خطوة</small></span></a>
+      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_wudu.jpg" alt="الوضوء" loading="lazy"><span>تعلّم الوضوء<small>من النية للدعاء</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="wrap">
+    <h2>جوّه التطبيق</h2>
+    <p class="lead">تطبيق إسلامي متكامل للعيلة كلها.</p>
+    <div class="shots">
+      <img src="img/app_1_home.jpg" alt="الرئيسية" loading="lazy">
+      <img src="img/app_2_quran.jpg" alt="القرآن" loading="lazy">
+      <img src="img/app_5_prayer.jpg" alt="مواقيت الصلاة" loading="lazy">
+      <img src="img/app_7_qibla.jpg" alt="القبلة" loading="lazy">
+    </div>
+    <div class="chips">
+      <div><i></i>مواقيت الصلاة</div>
+      <div><i></i>القرآن وتلاوته</div>
+      <div><i></i>اتجاه القبلة</div>
+      <div><i></i>الأذكار والأدعية</div>
+      <div><i></i>أسماء الله الحسنى</div>
+      <div><i></i>ركن الأطفال</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>تابعنا</h2>
+    <p class="lead">كل قنواتنا في مكان واحد.</p>
+    <div class="follow" style="margin:0 0 18px;padding:0;border:0">
+      <a class="pill" href="https://www.youtube.com/@NurIslamicApp" rel="noopener">▶️ @NurIslamicApp</a>
+      <a class="pill" href="https://www.instagram.com/nurislamicapp/" rel="noopener">📷 @nurislamicapp</a>
+    </div>
+    <div class="links">
+      <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.nemodroid.nurapp" rel="noopener">📲 <span>Google Play<small>حمّل التطبيق مجانًا</small></span></a>
+      <a class="btn" href="https://www.youtube.com/channel/UCOpbSBcrq4OClNY81c_ylFA" rel="noopener">▶️ <span>يوتيوب<small>قناة نور | Nur Islamic App</small></span></a>
+      <a class="btn" id="fb" href="" rel="noopener">📘 <span>فيسبوك<small>صفحة نور</small></span></a>
+      <a class="btn" href="https://www.instagram.com/nurislamicapp/" rel="noopener">📷 <span>إنستجرام<small>@nurislamicapp</small></span></a>
+      <a class="btn" href="mailto:nurislamicapp@gmail.com">✉️ <span>تواصل معنا<small>nurislamicapp@gmail.com</small></span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© نور | Nur Islamic App — محتوى آمن ومفيد للأطفال</div>
+</footer>
+
+<script>
+(function(){
+  // لو مفيش لينك فيسبوك، نخفي الزر
+  var fb=document.getElementById('fb');
+  if(!fb.getAttribute('href')) fb.classList.add('hide');
+  // على أندرويد نظهر لينك فتح المتجر مباشرة كبديل لو متصفح التطبيق بيمنع الفتح
+  if(/android/i.test(navigator.userAgent)) document.getElementById('altBox').classList.remove('hide');
+})();
+</script>
+</body>
+</html>
