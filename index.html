@@ -181,6 +181,14 @@ footer{padding:26px 0 40px; text-align:center; color:var(--muted); font-size:.85
   if(!fb.getAttribute('href')) fb.classList.add('hide');
   // على أندرويد نظهر لينك فتح المتجر مباشرة كبديل لو متصفح التطبيق بيمنع الفتح
   if(/android/i.test(navigator.userAgent)) document.getElementById('altBox').classList.remove('hide');
+  // تتبّع المصدر: الصفحة بتقرأ ?src=youtube (أو facebook / instagram / tiktok ...) وتضيفه لكل لينكات Google Play
+  // فيظهر في Play Console (Acquisition > UTM) كام تحميل جه من كل قناة. من غير src بيتسجّل "direct".
+  var q=new URLSearchParams(location.search);
+  var src=(q.get('src')||q.get('utm_source')||'direct').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,30)||'direct';
+  var ref=encodeURIComponent('utm_source='+src+'&utm_medium=links_page&utm_campaign=nur');
+  document.querySelectorAll('a[href*="play.google.com/store/apps/details"],a[href^="market://details"]').forEach(function(a){
+    a.setAttribute('href',a.getAttribute('href')+'&referrer='+ref);
+  });
 })();
 </script>
 </body>
