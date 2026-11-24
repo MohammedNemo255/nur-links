@@ -4,193 +4,137 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>نور | Nur Islamic App</title>
-<meta name="description" content="تعلّم الحروف والأرقام والألوان والأشكال والحيوانات والصلاة والوضوء مع عمران ومريم. حمّل تطبيق نور مجانًا.">
+<meta name="description" content="قصص الأنبياء للأطفال، والحروف العربية والإنجليزية، والأرقام والألوان والصلاة والوضوء مع عمران ومريم. حمّل تطبيق نور مجانًا.">
 <meta property="og:title" content="نور | Nur Islamic App">
-<meta property="og:description" content="تعلّم الحروف والأرقام والألوان والأشكال والحيوانات والصلاة والوضوء مع عمران ومريم.">
-<meta property="og:image" content="icon.png">
+<meta property="og:description" content="قصة جديدة كل يوم، وحروف عربي وإنجليزي مع عمران ومريم.">
+<meta property="og:image" content="img/hero_kids.jpg">
 <link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;800&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0f2a1c; --bg2:#173b27; --card:#ffffff12; --line:#ffffff26;
-  --ink:#f5f1e3; --muted:#b9c8bd; --gold:#f2b84b; --gold-ink:#2a1d00; --paper:#f5f1e3;
-}
+:root{--bg:#f2f7f3;--card:#ffffff;--ink:#12352a;--ink2:#4c6b5f;--line:#d8e6dd;--green:#0e4d36;--gold:#a87a1a;--goldbg:#fbf1dc;--mint:#e1f3ea;--sky:#e2f0f8;--rose:#fbe7ee;--btn-ink:#fffaf0;--gobtn:#c8962b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a14;--card:#14251d;--ink:#eaf3ee;--ink2:#a6c0b4;--line:#24392f;--green:#e3b85a;--gold:#e3b85a;--goldbg:#2e2614;--mint:#163328;--sky:#13293a;--rose:#33202a;--btn-ink:#14251d;--gobtn:#e3b85a}}
+:root[data-theme="dark"]{--bg:#0d1a14;--card:#14251d;--ink:#eaf3ee;--ink2:#a6c0b4;--line:#24392f;--green:#e3b85a;--gold:#e3b85a;--goldbg:#2e2614;--mint:#163328;--sky:#13293a;--rose:#33202a;--btn-ink:#14251d;--gobtn:#e3b85a}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; background-color:var(--bg); color:var(--ink);
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'><g fill='none' stroke='%23f2b84b' stroke-opacity='0.07' stroke-width='1.2'><path d='M45 8l7 17 18-7-7 18 17 7-17 7 7 18-18-7-7 17-7-17-18 7 7-18-17-7 17-7-7-18 18 7z'/></g></svg>");
-  font-family:"Cairo","Segoe UI",Tahoma,system-ui,sans-serif; line-height:1.7;
-}
-a{color:inherit}
-.wrap{max-width:960px; margin:0 auto; padding:0 18px}
-
-/* hero */
-.hero{background:radial-gradient(120% 90% at 50% 0%, var(--bg2), var(--bg)); padding:34px 0 40px; text-align:center}
-.logo{width:96px; height:96px; border-radius:22px; box-shadow:0 8px 28px #0009; display:block; margin:0 auto 14px}
-h1{margin:0 0 2px; font-size:clamp(3.2rem,12vw,5rem); color:var(--gold); line-height:1.1; text-shadow:0 4px 24px #f2b84b33}
-.sub{margin:0 0 6px; font-size:clamp(1.15rem,4vw,1.5rem); font-weight:600}
-.find{margin:14px 0 0; color:var(--muted); font-size:.95rem}
-.find b{color:var(--gold)}
-.tag{margin:0 auto 22px; max-width:520px; color:var(--muted); font-size:1.05rem}
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  padding:14px 22px; border-radius:14px; font-weight:700; font-size:1.05rem; text-decoration:none;
-  border:1px solid var(--line); background:var(--card); color:var(--ink);
-}
-.btn:hover,.btn:focus-visible{border-color:var(--gold); outline:none}
-.btn.primary{background:var(--gold); color:var(--gold-ink); border-color:var(--gold); font-size:1.18rem; padding:16px 28px}
-.alt{font-size:.88rem; color:var(--muted); margin:10px 0 0}
-.alt a{color:var(--gold)}
-.hide{display:none}
-.chars{display:flex; justify-content:center; gap:14px; margin:26px auto 0}
-.chars figure{margin:0; width:130px}
-.chars img{width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:16px; border:2px solid var(--gold); display:block}
-.chars figcaption{font-size:.9rem; color:var(--muted); margin-top:4px}
-
-/* sections */
-section{padding:38px 0}
-section.alt-bg{background:#0b2016}
-h2{margin:0 0 6px; font-size:1.5rem; color:var(--gold)}
-.lead{margin:0 0 20px; color:var(--muted)}
-
-.banner{position:relative; direction:ltr; border-radius:18px; overflow:hidden; border:1px solid var(--line); box-shadow:0 10px 36px #0007}
-.banner img{width:100%; height:auto; display:block}
-.banner .hot{position:absolute; display:block; border-radius:14px}
-.banner .hot:hover,.banner .hot:focus-visible{outline:2px solid var(--gold); outline-offset:1px; background:#f2b84b1a}
-
-/* series grid */
-.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px}
-.card{background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; display:block}
-.card:hover,.card:focus-visible{border-color:var(--gold); outline:none}
-.card img{width:100%; aspect-ratio:3/4; object-fit:cover; display:block}
-.card span{display:block; padding:10px 8px; text-align:center; font-weight:700}
-.card small{display:block; font-weight:400; color:var(--muted); font-size:.82rem}
-
-/* app screens */
-.shots{display:flex; gap:12px; overflow-x:auto; padding-bottom:10px; scroll-snap-type:x mandatory}
-.shots img{height:360px; width:auto; border-radius:14px; border:1px solid var(--line); scroll-snap-align:start; flex:none}
-.chips{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:20px}
-.chips div{display:flex; align-items:center; gap:12px; background:#ffffff0d; border:1px solid var(--line); border-radius:16px; padding:16px 18px; font-size:1.12rem; font-weight:600}
-.chips i{width:11px; height:11px; border-radius:50%; background:var(--gold); flex:none}
-.follow{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:22px; padding-top:18px; border-top:1px solid var(--line)}
-.follow b{color:var(--gold)}
-.pill{display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:999px; border:1px solid var(--line); background:#ffffff0d; text-decoration:none; font-weight:600}
-.pill:hover{border-color:var(--gold)}
-
-/* channels */
-.links{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px}
-.ic{width:30px; height:30px; flex:none}
-.ic.s{width:20px; height:20px}
-.links .btn{width:100%; justify-content:flex-start; gap:14px; text-align:start}
-.links .btn small{display:block; font-weight:400; font-size:.8rem; color:var(--muted)}
-footer{padding:26px 0 40px; text-align:center; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line)}
-@media (max-width:520px){ .shots img{height:300px} }
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,system-ui,sans-serif;line-height:1.7}
+main{max-width:560px;margin:0 auto;padding:0 16px 40px}
+a{color:inherit;text-decoration:none}
+.hero{text-align:center;padding:18px 0 8px}
+.hero .art{border-radius:28px;overflow:hidden;background:var(--mint);aspect-ratio:640/551}
+.hero .art img{width:100%;height:100%;object-fit:cover;display:block}
+.logo{font-family:Amiri,serif;font-size:64px;line-height:1;color:var(--gold);margin:14px 0 0}
+.tag{font-family:"Reem Kufi",Cairo,sans-serif;font-size:22px;margin:4px 0 2px}
+.lead{color:var(--ink2);margin:0 auto 14px;max-width:440px}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:var(--btn-ink);font-weight:800;font-size:19px;border-radius:999px;padding:14px 20px;min-height:54px}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.sub{display:flex;justify-content:center;gap:6px 16px;flex-wrap:wrap;margin-top:10px;font-size:14px;color:var(--ink2)}
+.sub a{border-bottom:1px solid var(--line)}
+.alt{margin-top:8px;font-size:13px;color:var(--ink2)} .alt a{color:var(--gold);font-weight:600} .hide{display:none}
+h2{font-family:"Reem Kufi",Cairo,sans-serif;font-size:24px;margin:30px 0 10px;text-wrap:balance}
+.story{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.story img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;background:var(--goldbg)}
+.story .b{padding:12px 16px 16px}
+.kicker{display:inline-block;background:var(--goldbg);color:var(--gold);font-weight:800;font-size:13px;border-radius:999px;padding:2px 12px}
+.story h3{margin:8px 0 2px;font-size:20px;text-wrap:balance}
+.story p{margin:0 0 12px;color:var(--ink2);font-size:14px}
+.story .go{display:inline-flex;gap:8px;align-items:center;background:var(--gobtn);color:#1d1404;font-weight:800;border-radius:999px;padding:9px 20px}
+.sched{display:grid;gap:8px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.row b{font-variant-numeric:tabular-nums;background:var(--mint);border-radius:999px;padding:2px 12px;font-size:14px;white-space:nowrap}
+.row.n b{background:var(--goldbg);color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sc{border-radius:18px;overflow:hidden;display:flex;flex-direction:column;padding-bottom:10px}
+.sc img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:6px}
+.sc .st{font-weight:800;padding:0 12px} .sc .ss{font-size:13px;color:var(--ink2);padding:0 12px}
+.wide{grid-column:span 2}.wide img{aspect-ratio:16/7}
+.gold{background:var(--goldbg)} .mint{background:var(--mint)} .sky{background:var(--sky)} .rose{background:var(--rose)}
+.shots{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.shots figure{margin:0;flex:0 0 132px;scroll-snap-align:start;text-align:center}
+.shots img{width:132px;border-radius:14px;display:block;border:1px solid var(--line)}
+.shots figcaption{font-size:12px;color:var(--ink2);margin-top:4px}
+.chs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ch{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column}
+.ch b{font-size:16px} .ch span{font-size:13px;color:var(--ink2)}
+footer{text-align:center;color:var(--ink2);font-size:13px;margin-top:30px}
+footer a{color:var(--gold)}
+@media (prefers-reduced-motion:no-preference){.sc,.ch,.cta,.story .go{transition:transform .15s}.sc:active,.ch:active,.cta:active{transform:scale(.98)}}
 </style>
 </head>
 <body>
-
+<main>
 <header class="hero">
-  <div class="wrap">
-    <img class="logo" src="icon.png" alt="أيقونة تطبيق نور">
-    <h1>نور</h1>
-    <p class="sub">تطبيق إسلامي لكل يوم</p>
-    <p class="tag">تعلّم الحروف والأرقام والألوان والأشكال والحيوانات والصلاة والوضوء مع عمران ومريم، بطريقة ممتعة وآمنة للأطفال.</p>
-    <a class="btn primary" id="play" href="https://play.google.com/store/apps/details?id=com.nemodroid.nurapp" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00A0FF" d="M3.6 1.5C3.4 1.7 3.3 2 3.3 2.4v19.2c0 .4.1.7.3.9L14.1 12z"/><path fill="#00E176" d="M3.6 1.5c.4-.2.9.1 1.5.4l12.2 6.9-3.2 3.2z"/><path fill="#FFD400" d="M17.3 8.8 14.1 12l3.2 3.2 3.7-2.1c.8-.5.8-1.7 0-2.2z"/><path fill="#FF3A44" d="M14.1 12 3.6 22.5c.4.2.9-.1 1.5-.4l12.2-6.9z"/></svg> حمّل التطبيق مجانًا من Google Play</a>
-    <p class="alt"><a class="btn" id="ag" href="https://appgallery.huawei.com/app/C118841257" rel="noopener" style="margin-top:6px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6z" fill="none" stroke="#f2b84b" stroke-width="2" stroke-linejoin="round"/><path d="M9 8a3 3 0 0 1 6 0" fill="none" stroke="#f2b84b" stroke-width="2" stroke-linecap="round"/></svg> حمّله من Huawei AppGallery</a></p>
-    <p class="find">ابحث في جوجل بلاي عن <b>نور - تطبيق إسلامي</b></p>
-    <p class="alt hide" id="altBox">الزر مفتحش؟ <a href="market://details?id=com.nemodroid.nurapp">افتح مباشرة في متجر Play</a></p>
-    <div class="chars">
-      <figure><img src="img/emran.jpg" alt="عمران" loading="lazy"><figcaption>عمران</figcaption></figure>
-      <figure><img src="img/maryam.jpg" alt="مريم" loading="lazy"><figcaption>مريم</figcaption></figure>
-    </div>
-  </div>
+  <div class="art"><img src="img/hero_kids.jpg" alt="عمران ومريم بيسلّموا عليكم"></div>
+  <div class="logo">نور</div>
+  <div class="tag">نتعلّم ونحكي مع عمران ومريم</div>
+  <p class="lead">قصص الأنبياء للأطفال، والحروف العربية والإنجليزية، والأرقام والألوان والصلاة والوضوء — بطريقة ممتعة وآمنة.</p>
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.nemodroid.nurapp">حمّل تطبيق نور مجانًا من Google Play</a>
+  <div class="sub"><a href="https://appgallery.huawei.com/app/C118841257">حمّله من Huawei AppGallery</a><span>أو ابحث عن «نور: قرآن وأذان وأذكار»</span></div>
+  <div class="alt hide" id="altBox">الزر مفتحش؟ <a href="market://details?id=com.nemodroid.nurapp">افتح متجر Play مباشرة</a></div>
 </header>
-
-<section style="padding-bottom:0">
-  <div class="wrap">
-    <div class="banner">
-      <img src="img/banner.jpg" alt="نور - تطبيق إسلامي لكل يوم: مواقيت الصلاة، القرآن وتلاوته، اتجاه القبلة، الأذكار والأدعية، أسماء الله الحسنى، ركن الأطفال" loading="lazy">
-      <!-- مناطق ضغط فوق الصورة، كل واحدة بلينكها -->
-      <a class="hot" style="left:62.2%;top:60.6%;width:22.3%;height:9.5%" href="https://play.google.com/store/apps/details?id=com.nemodroid.nurapp" rel="noopener" aria-label="الآن على Google Play"></a>
-      <a class="hot" style="left:75.5%;top:82.5%;width:19.3%;height:12.4%" href="https://play.google.com/store/apps/details?id=com.nemodroid.nurapp" rel="noopener" aria-label="حمّله مجانًا"></a>
-      <a class="hot" style="left:5.3%;top:85%;width:15.5%;height:7.4%" href="https://www.facebook.com/profile.php?id=61595554393497" rel="noopener" aria-label="صفحة نور على فيسبوك"></a>
-      <a class="hot" style="left:21.7%;top:85%;width:17.1%;height:7.4%" href="https://www.youtube.com/@NurIslamicApp" rel="noopener" aria-label="قناة نور على يوتيوب"></a>
+<section aria-labelledby="h-story">
+  <h2 id="h-story">قصة النهارده</h2>
+  <article class="story">
+    <a id="stLink" href="https://www.youtube.com/@NurIslamicApp/shorts" target="_blank" rel="noopener"><img id="stImg" src="img/st/03.jpg" alt=""></a>
+    <div class="b">
+      <span class="kicker">قصص نور للأطفال</span>
+      <h3 id="stTitle">قصة النملة وسيدنا سليمان 🐜</h3>
+      <p id="stNext">قصة جديدة كل يوم الساعة 8 بالليل</p>
+      <a class="go" id="stGo" href="https://www.youtube.com/@NurIslamicApp/shorts" target="_blank" rel="noopener">شاهد القصة</a>
     </div>
+  </article>
+</section>
+<section aria-labelledby="h-sched">
+  <h2 id="h-sched">مواعيدنا كل يوم</h2>
+  <div class="sched">
+    <div class="row"><span>حرف عربي كامل</span><b>1 الضهر</b></div>
+    <div class="row"><span>حرف إنجليزي</span><b>5 العصر</b></div>
+    <div class="row n"><span>قصة من قصص الأنبياء</span><b>8 بالليل</b></div>
   </div>
 </section>
-
-<section>
-  <div class="wrap">
-    <h2>نتعلّم إيه مع نور؟</h2>
-    <p class="lead">سلاسل فيديو قصيرة مع عمران ومريم على يوتيوب وفيسبوك وإنستجرام.</p>
-    <div class="grid">
-      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_letters.jpg" alt="الحروف" loading="lazy"><span>الحروف العربية<small>الفتحة والضمة والكسرة</small></span></a>
-      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_numbers.jpg" alt="الأرقام" loading="lazy"><span>الأرقام<small>العدّ من ١ إلى ١٠</small></span></a>
-      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_colors.jpg" alt="الألوان" loading="lazy"><span>الألوان<small>١٠ ألوان بالعربي</small></span></a>
-      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_shapes.jpg" alt="الأشكال" loading="lazy"><span>الأشكال<small>دائرة، مربع، مثلث…</small></span></a>
-      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_animals.jpg" alt="الحيوانات" loading="lazy"><span>الحيوانات<small>٢٠ حيوان لطيف</small></span></a>
-      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_salah.jpg" alt="الصلاة" loading="lazy"><span>تعلّم الصلاة<small>خطوة خطوة</small></span></a>
-      <a class="card" href="https://www.youtube.com/@NurIslamicApp/playlists" rel="noopener"><img src="img/s_wudu.jpg" alt="الوضوء" loading="lazy"><span>تعلّم الوضوء<small>من النية للدعاء</small></span></a>
-    </div>
+<section aria-labelledby="h-series">
+  <h2 id="h-series">نتعلّم إيه مع نور؟</h2>
+  <div class="grid"><a class="sc gold wide" href="https://www.youtube.com/@NurIslamicApp/shorts" target="_blank" rel="noopener"><img src="img/st/05.jpg" alt="" loading="lazy"><span class="st">قصص الأنبياء للأطفال</span><span class="ss">16 قصة بالفيديو — قصة جديدة كل يوم الساعة 8</span></a><a class="sc mint" href="https://www.youtube.com/playlist?list=PLcrUe3wGaCCU" target="_blank" rel="noopener"><img src="img/s_letters.jpg" alt="" loading="lazy"><span class="st">الحروف العربية</span><span class="ss">28 حرف، حرف في فيديو</span></a><a class="sc sky" href="https://www.youtube.com/playlist?list=PLcQqMwYHjdao" target="_blank" rel="noopener"><img src="img/s_english.jpg" alt="" loading="lazy"><span class="st">English ABC</span><span class="ss">حرف إنجليزي كل يوم</span></a><a class="sc mint" href="https://www.youtube.com/playlist?list=PLCxyLRpxENZs" target="_blank" rel="noopener"><img src="img/s_numbers.jpg" alt="" loading="lazy"><span class="st">الأرقام</span><span class="ss">العدّ من ١ لـ ١٠</span></a><a class="sc rose" href="https://www.youtube.com/playlist?list=PLLXxP-ywwL78" target="_blank" rel="noopener"><img src="img/s_colors.jpg" alt="" loading="lazy"><span class="st">الألوان</span><span class="ss">١٠ ألوان بالعربي</span></a><a class="sc sky" href="https://www.youtube.com/playlist?list=PLJ1aDHT4HpkU" target="_blank" rel="noopener"><img src="img/s_shapes.jpg" alt="" loading="lazy"><span class="st">الأشكال</span><span class="ss">دائرة، مربع، مثلث…</span></a><a class="sc gold" href="https://www.youtube.com/playlist?list=PLM-Yyy-PcBP4" target="_blank" rel="noopener"><img src="img/s_animals.jpg" alt="" loading="lazy"><span class="st">الحيوانات</span><span class="ss">٢٠ حيوان لطيف</span></a><a class="sc sky" href="https://www.youtube.com/playlist?list=PLGNFt5pENFZo" target="_blank" rel="noopener"><img src="img/s_wudu.jpg" alt="" loading="lazy"><span class="st">الوضوء</span><span class="ss">من النية للدعاء</span></a><a class="sc mint" href="https://www.youtube.com/playlist?list=PLJuMutISNL-I" target="_blank" rel="noopener"><img src="img/s_salah.jpg" alt="" loading="lazy"><span class="st">الصلاة</span><span class="ss">خطوة خطوة</span></a></div>
+</section>
+<section aria-labelledby="h-app">
+  <h2 id="h-app">جوّه التطبيق</h2>
+  <div class="shots"><figure><img src="img/app/a1.jpg" alt="الرئيسية" loading="lazy"><figcaption>الرئيسية</figcaption></figure><figure><img src="img/app/a2.jpg" alt="ركن الأطفال" loading="lazy"><figcaption>ركن الأطفال</figcaption></figure><figure><img src="img/app/a3.jpg" alt="قصص الفيديو" loading="lazy"><figcaption>قصص الفيديو</figcaption></figure><figure><img src="img/app/a4.jpg" alt="الصلاة" loading="lazy"><figcaption>الصلاة</figcaption></figure><figure><img src="img/app/a5.jpg" alt="القرآن" loading="lazy"><figcaption>القرآن</figcaption></figure><figure><img src="img/app/a6.jpg" alt="الأذكار" loading="lazy"><figcaption>الأذكار</figcaption></figure><figure><img src="img/app/a7.jpg" alt="القبلة" loading="lazy"><figcaption>القبلة</figcaption></figure><figure><img src="img/app/a8.jpg" alt="المسابقات" loading="lazy"><figcaption>المسابقات</figcaption></figure></div>
+</section>
+<section aria-labelledby="h-follow">
+  <h2 id="h-follow">تابعنا</h2>
+  <div class="chs">
+    <a class="ch" href="https://www.youtube.com/channel/UCOpbSBcrq4OClNY81c_ylFA" target="_blank" rel="noopener"><b>يوتيوب</b><span dir="ltr">@NurIslamicApp</span></a>
+    <a class="ch" href="https://www.tiktok.com/@nurislamicapp" target="_blank" rel="noopener"><b>تيك توك</b><span dir="ltr">@nurislamicapp</span></a>
+    <a class="ch" href="https://www.instagram.com/nurislamicapp/" target="_blank" rel="noopener"><b>إنستجرام</b><span dir="ltr">@nurislamicapp</span></a>
+    <a class="ch" id="fb" href="https://www.facebook.com/profile.php?id=61595554393497" target="_blank" rel="noopener"><b>فيسبوك</b><span>صفحة نور</span></a>
   </div>
 </section>
-
-<section class="alt-bg">
-  <div class="wrap">
-    <h2>جوّه التطبيق</h2>
-    <p class="lead">تطبيق إسلامي متكامل للعيلة كلها.</p>
-    <div class="shots">
-      <img src="img/app_1_home.jpg" alt="الرئيسية" loading="lazy">
-      <img src="img/app_2_quran.jpg" alt="القرآن" loading="lazy">
-      <img src="img/app_5_prayer.jpg" alt="مواقيت الصلاة" loading="lazy">
-      <img src="img/app_7_qibla.jpg" alt="القبلة" loading="lazy">
-    </div>
-    <div class="chips">
-      <div><i></i>مواقيت الصلاة</div>
-      <div><i></i>القرآن وتلاوته</div>
-      <div><i></i>اتجاه القبلة</div>
-      <div><i></i>الأذكار والأدعية</div>
-      <div><i></i>أسماء الله الحسنى</div>
-      <div><i></i>ركن الأطفال</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>تابعنا</h2>
-    <p class="lead">كل قنواتنا في مكان واحد.</p>
-    <div class="links">
-      <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.nemodroid.nurapp" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00A0FF" d="M3.6 1.5C3.4 1.7 3.3 2 3.3 2.4v19.2c0 .4.1.7.3.9L14.1 12z"/><path fill="#00E176" d="M3.6 1.5c.4-.2.9.1 1.5.4l12.2 6.9-3.2 3.2z"/><path fill="#FFD400" d="M17.3 8.8 14.1 12l3.2 3.2 3.7-2.1c.8-.5.8-1.7 0-2.2z"/><path fill="#FF3A44" d="M14.1 12 3.6 22.5c.4.2.9-.1 1.5-.4l12.2-6.9z"/></svg> <span>Google Play<small>حمّل التطبيق مجانًا</small></span></a>
-      <a class="btn" href="https://appgallery.huawei.com/app/C118841257" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6z" fill="none" stroke="#f2b84b" stroke-width="2" stroke-linejoin="round"/><path d="M9 8a3 3 0 0 1 6 0" fill="none" stroke="#f2b84b" stroke-width="2" stroke-linecap="round"/></svg> <span>AppGallery<small>للأجهزة اللي مفيهاش جوجل بلاي</small></span></a>
-      <a class="btn" href="https://www.youtube.com/channel/UCOpbSBcrq4OClNY81c_ylFA" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="#fff" d="M9.545 15.568V8.432L15.818 12z"/></svg> <span>يوتيوب<small>قناة نور | Nur Islamic App</small></span></a>
-      <a class="btn" id="fb" href="https://www.facebook.com/profile.php?id=61595554393497" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> <span>فيسبوك<small>صفحة نور</small></span></a>
-      <a class="btn" href="https://www.instagram.com/nurislamicapp/" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2.2" y="2.2" width="19.6" height="19.6" rx="5.6" fill="none" stroke="url(#ig)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.6" fill="none" stroke="url(#ig)" stroke-width="2.2"/><circle cx="17.6" cy="6.4" r="1.4" fill="url(#ig)"/></svg> <span>إنستجرام<small>@nurislamicapp</small></span></a>
-      <a class="btn" href="https://www.tiktok.com/@nurislamicapp" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#25F4EE" transform="translate(-0.9 -0.9)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#FE2C55" transform="translate(0.9 0.9)" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/><path fill="#fff" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg> <span>تيك توك<small>@nurislamicapp</small></span></a>
-      <a class="btn" href="mailto:nurislamicapp@gmail.com"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="#f2b84b" stroke-width="2"/><path d="m3.5 7.5 8.5 6 8.5-6" fill="none" stroke="#f2b84b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span>تواصل معنا<small>nurislamicapp@gmail.com</small></span></a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">© نور | Nur Islamic App — محتوى آمن ومفيد للأطفال</div>
-</footer>
-
+<footer>تواصل معنا: <a href="mailto:nurislamicapp@gmail.com">nurislamicapp@gmail.com</a><br>© نور | Nur Islamic App — محتوى آمن ومفيد للأطفال</footer>
+</main>
 <script>
 (function(){
-  // لو مفيش لينك فيسبوك، نخفي الزر
-  var fb=document.getElementById('fb');
-  if(!fb.getAttribute('href')) fb.classList.add('hide');
-  // على أندرويد نظهر لينك فتح المتجر مباشرة كبديل لو متصفح التطبيق بيمنع الفتح
+  var fb=document.getElementById('fb'); if(!fb.getAttribute('href')) fb.classList.add('hide');
   if(/android/i.test(navigator.userAgent)) document.getElementById('altBox').classList.remove('hide');
-  // تتبّع المصدر: الصفحة بتقرأ ?src=youtube (أو facebook / instagram / tiktok ...) وتضيفه لكل لينكات Google Play
-  // فيظهر في Play Console (Acquisition > UTM) كام تحميل جه من كل قناة. من غير src بيتسجّل "direct".
+  // UTM: ?src=youtube|facebook|instagram|tiktok ... is added to every Google Play link (Play Console > Acquisition > UTM)
   var q=new URLSearchParams(location.search);
   var src=(q.get('src')||q.get('utm_source')||'direct').toLowerCase().replace(/[^a-z0-9_-]/g,'').slice(0,30)||'direct';
   var ref=encodeURIComponent('utm_source='+src+'&utm_medium=links_page&utm_campaign=nur');
   document.querySelectorAll('a[href*="play.google.com/store/apps/details"],a[href^="market://details"]').forEach(function(a){
     a.setAttribute('href',a.getAttribute('href')+'&referrer='+ref);
   });
+  // Today's story: the latest one already out (20:00 Cairo), and the next one
+  var S=[{"d": "2026-11-22", "n": "01", "t": "قصة أصحاب الفيل 🐘", "v": "vt8-slcQxjw"}, {"d": "2026-11-23", "n": "02", "t": "قصة الثلاثة في الغار 🪨", "v": "bWMZ8Od0a64"}, {"d": "2026-11-24", "n": "03", "t": "قصة النملة وسيدنا سليمان 🐜", "v": "r_JzpIXdPTc"}, {"d": "2026-11-25", "n": "04", "t": "قصة الهدهد وسيدنا سليمان 🐦", "v": "6DDwdV8vjjA"}, {"d": "2026-11-26", "n": "05", "t": "قصة سيدنا يونس والحوت 🐋", "v": "MDj4JGR7EUs"}, {"d": "2026-11-27", "n": "06", "t": "قصة العنكبوت وغار الهجرة 🕸️", "v": "gn7bBUAcOkk"}, {"d": "2026-11-28", "n": "07", "t": "قصة سيدنا موسى وفرعون 🌊", "v": "MnqSvtljS5o"}, {"d": "2026-11-29", "n": "08", "t": "قصة سيدنا إبراهيم والنار 🔥", "v": "QNOhtZ9qJuM"}, {"d": "2026-11-30", "n": "09", "t": "قصة سيدنا يوسف وإخوته ⭐", "v": "zBkgQXroYQI"}, {"d": "2026-12-01", "n": "01", "t": "قصة أصحاب الفيل 🐘", "v": "neFtuf-gEVY"}, {"d": "2026-12-02", "n": "02", "t": "قصة الثلاثة في الغار 🪨", "v": "nrljblNjCOQ"}, {"d": "2026-12-03", "n": "03", "t": "قصة النملة وسيدنا سليمان 🐜", "v": "thggm68uRus"}, {"d": "2026-12-04", "n": "04", "t": "قصة الهدهد وسيدنا سليمان 🐦", "v": "lAS7vlHts7Q"}, {"d": "2026-12-05", "n": "05", "t": "قصة سيدنا يونس والحوت 🐋", "v": "M701-jeuCt8"}, {"d": "2026-12-06", "n": "10", "t": "قصة سيدنا نوح والسفينة 🚢", "v": "swhI326cuYE"}, {"d": "2026-12-07", "n": "11", "t": "قصة سيدنا داود وجالوت 🛡️", "v": "JQs8lU7vSIo"}, {"d": "2026-12-08", "n": "12", "t": "قصة سيدنا بلال والأذان 🕌", "v": "xwD0ioBwAe8"}, {"d": "2026-12-09", "n": "13", "t": "قصة السيدة مريم وسيدنا عيسى 🌴", "v": "KKscKSU0Wtg"}, {"d": "2026-12-10", "n": "14", "t": "قصة لقمان الحكيم 🐢", "v": "sire2wwHwh0"}, {"d": "2026-12-11", "n": "15", "t": "قصة أصحاب الكهف 🏔️", "v": "y7Yz6odIz5I"}, {"d": "2026-12-12", "n": "16", "t": "عمران يحكي: رحمة النبي عليه الصلاة والسلام بالقطة 🐱", "v": "nfjH2PAmhTM"}, {"d": "2026-12-13", "n": "06", "t": "قصة العنكبوت وغار الهجرة 🕸️", "v": "VnOuGXcMb2E"}, {"d": "2026-12-14", "n": "07", "t": "قصة سيدنا موسى وفرعون 🌊", "v": "sX1flrlYuYc"}, {"d": "2026-12-15", "n": "08", "t": "قصة سيدنا إبراهيم والنار 🔥", "v": "Lb1jtvKnIog"}, {"d": "2026-12-16", "n": "09", "t": "قصة سيدنا يوسف وإخوته ⭐", "v": "uK-YMgrwiCY"}, {"d": "2026-12-17", "n": "10", "t": "قصة سيدنا نوح والسفينة 🚢", "v": "-361W7aCYrg"}, {"d": "2026-12-18", "n": "11", "t": "قصة سيدنا داود وجالوت 🛡️", "v": "4fA0TJIGuMs"}, {"d": "2026-12-19", "n": "12", "t": "قصة سيدنا بلال والأذان 🕌", "v": "rJLdbLfgMHQ"}, {"d": "2026-12-20", "n": "13", "t": "قصة السيدة مريم وسيدنا عيسى 🌴", "v": "yvsA_OyIQFw"}, {"d": "2026-12-21", "n": "14", "t": "قصة لقمان الحكيم 🐢", "v": "3lJATbjDOkQ"}, {"d": "2026-12-22", "n": "15", "t": "قصة أصحاب الكهف 🏔️", "v": "2iduNEULqWc"}, {"d": "2026-12-23", "n": "16", "t": "عمران يحكي: رحمة النبي عليه الصلاة والسلام بالقطة 🐱", "v": "3SHflBQ5DTg"}];
+  var now=new Date(), pick=null, next=null;
+  for(var i=0;i<S.length;i++){
+    var t=new Date(S[i].d+'T20:00:00+02:00');
+    if(t<=now) pick=S[i]; else if(!next) next=S[i];
+  }
+  if(pick&&pick.v){
+    var u='https://www.youtube.com/shorts/'+pick.v;
+    document.getElementById('stLink').href=u; document.getElementById('stGo').href=u;
+    document.getElementById('stImg').src='img/st/'+pick.n+'.jpg';
+    document.getElementById('stTitle').textContent=pick.t;
+  }
+  if(next) document.getElementById('stNext').textContent='القصة الجاية: '+next.t+' — الساعة 8 بالليل';
 })();
 </script>
 </body>
